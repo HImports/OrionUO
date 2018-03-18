@@ -182,14 +182,14 @@ void CTextRenderer::Draw()
 				g_ColorManager.SendColorsToShader(textColor);
 
 				if (text.Unicode)
-					glUniform1iARB(g_ShaderDrawMode, SDM_TEXT_COLORED_NO_BLACK);
+					glUniform1i(g_ShaderDrawMode, SDM_TEXT_COLORED_NO_BLACK);
 				else if (text.Font != 5 && text.Font != 8)
-					glUniform1iARB(g_ShaderDrawMode, SDM_PARTIAL_HUE);
+					glUniform1i(g_ShaderDrawMode, SDM_PARTIAL_HUE);
 				else
-					glUniform1iARB(g_ShaderDrawMode, SDM_COLORED);
+					glUniform1i(g_ShaderDrawMode, SDM_COLORED);
 			}
 			else
-				glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+				glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 
 			if (text.Transparent)
 			{
@@ -310,14 +310,14 @@ void CTextRenderer::WorldDraw()
 				g_ColorManager.SendColorsToShader(textColor);
 
 				if (text.Unicode)
-					glUniform1iARB(g_ShaderDrawMode, SDM_TEXT_COLORED_NO_BLACK);
+					glUniform1i(g_ShaderDrawMode, SDM_TEXT_COLORED_NO_BLACK);
 				else if (text.Font != 5 && text.Font != 8)
-					glUniform1iARB(g_ShaderDrawMode, SDM_PARTIAL_HUE);
+					glUniform1i(g_ShaderDrawMode, SDM_PARTIAL_HUE);
 				else
-					glUniform1iARB(g_ShaderDrawMode, SDM_COLORED);
+					glUniform1i(g_ShaderDrawMode, SDM_COLORED);
 			}
 			else
-				glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+				glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 
 			if (text.Transparent)
 			{

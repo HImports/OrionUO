@@ -187,14 +187,14 @@ void CGUIShopItem::SetShaderMode()
 	if (m_Color != 0)
 	{
 		if (m_PartialHue)
-			glUniform1iARB(g_ShaderDrawMode, SDM_PARTIAL_HUE);
+			glUniform1i(g_ShaderDrawMode, SDM_PARTIAL_HUE);
 		else
-			glUniform1iARB(g_ShaderDrawMode, SDM_COLORED);
+			glUniform1i(g_ShaderDrawMode, SDM_COLORED);
 
 		g_ColorManager.SendColorsToShader(m_Color);
 	}
 	else
-		glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+		glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 }
 //----------------------------------------------------------------------------------
 void CGUIShopItem::Draw(const bool &checktrans)
@@ -204,7 +204,7 @@ void CGUIShopItem::Draw(const bool &checktrans)
 
 	glTranslatef((GLfloat)m_X, (GLfloat)m_Y, 0.0f);
 
-	glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+	glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 
 	m_NameText.Draw(52, m_TextOffset);
 	m_CountText.Draw(196 - m_CountText.Width, (m_MaxOffset / 2) - (m_CountText.Height / 2));
@@ -273,7 +273,7 @@ void CGUIShopItem::Draw(const bool &checktrans)
 		}
 	}
 
-	glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+	glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 
 	th = g_Orion.ExecuteGump(0x0039);
 

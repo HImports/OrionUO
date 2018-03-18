@@ -168,6 +168,7 @@ xcopy /y /d  "$(SolutionDir)debug_bin\Orion.dll" "$(ProjectDir)"
       <CompileAsManaged>false</CompileAsManaged>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -291,6 +292,7 @@ xcopy /y /d  "$(SolutionDir)bin64\Orion.dll" "$(ProjectDir)"
     <ClInclude Include="GLEngine\GLTexture.h" />
     <ClInclude Include="GLEngine\GLTextureCircleOfTransparency.h" />
     <ClInclude Include="GLEngine\GLVector.h" />
+    <ClInclude Include="gl_core_2_1.h" />
     <ClInclude Include="GUI\BaseGUI.h" />
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="GUI\GUIAlphaBlending.h" />
@@ -540,6 +542,7 @@ xcopy /y /d  "$(SolutionDir)bin64\Orion.dll" "$(ProjectDir)"
     <ClCompile Include="GLEngine\GLTexture.cpp" />
     <ClCompile Include="GLEngine\GLTextureCircleOfTransparency.cpp" />
     <ClCompile Include="GLEngine\GLVector.cpp" />
+    <ClCompile Include="gl_core_2_1.cpp" />
     <ClCompile Include="GUI\BaseGUI.cpp" />
     <ClCompile Include="GUI\GUIAlphaBlending.cpp" />
     <ClCompile Include="GUI\GUIBlending.cpp" />

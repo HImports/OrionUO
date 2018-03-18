@@ -42,14 +42,14 @@ void CGUIDrawObject::SetShaderMode()
 	if (m_Color != 0)
 	{
 		if (m_PartialHue)
-			glUniform1iARB(g_ShaderDrawMode, SDM_PARTIAL_HUE);
+			glUniform1i(g_ShaderDrawMode, SDM_PARTIAL_HUE);
 		else
-			glUniform1iARB(g_ShaderDrawMode, SDM_COLORED);
+			glUniform1i(g_ShaderDrawMode, SDM_COLORED);
 
 		g_ColorManager.SendColorsToShader(m_Color);
 	}
 	else
-		glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+		glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 }
 //----------------------------------------------------------------------------------
 void CGUIDrawObject::PrepareTextures()

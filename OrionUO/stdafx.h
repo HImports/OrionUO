@@ -30,8 +30,8 @@
 #include <sys/stat.h>
 #include <functional>
 
-#include "Dependencies/include/glew.h"
-#include "Dependencies/include/wglew.h"
+//#include "Dependencies/include/glew.h"
+//#include "Dependencies/include/wglew.h"
 #include "Dependencies/include/bass.h"
 #include "Dependencies/include/bassmidi.h"
 #include "Dependencies/include/FreeImage.h"
@@ -77,6 +77,7 @@
 #include "Wisp/WispThread.h"
 #include "Wisp/WispThreadedTimer.h"
 #include "Wisp/WispWindow.h"
+#include "gl_core_2_1.h"
 
 #include "DefinitionMacro.h"
 #include "EnumList.h"
@@ -274,6 +275,7 @@ class CGump;
 #include "Screen stages/SelectProfessionScreen.h"
 #include "Screen stages/SelectTownScreen.h"
 #include "Screen stages/ServerScreen.h"
+
 
 //----------------------------------------------------------------------------------
 #endif

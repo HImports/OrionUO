@@ -837,6 +837,9 @@
     <ClInclude Include="Utility\PingThread.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="gl_core_2_1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OrionUO.cpp">
@@ -1555,6 +1558,9 @@
     </ClCompile>
     <ClCompile Include="Utility\PingThread.cpp">
       <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="gl_core_2_1.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1167,7 +1167,7 @@ void CAnimationManager::ClearUnusedTextures(uint ticks)
 
 			it = m_UsedAnimList.erase(it);
 
-			if (++count >= MAX_ANIMATIONS_OBJECT_REMOVED_BY_GARBAGE_COLLECTOR)
+			if (++count >= MAX_ANIMATIONS_OBJECT_REMOVED_BY_GAGE_COLLECTOR)
 				break;
 		}
 		else
@@ -1385,7 +1385,7 @@ void CAnimationManager::Draw(CGameObject *obj, int x, int y, const bool &mirror,
 
 		if (isShadow)
 		{
-			glUniform1iARB(g_ShaderDrawMode, SDM_SHADOW);
+			glUniform1i(g_ShaderDrawMode, SDM_SHADOW);
 
 			glEnable(GL_BLEND);
 			glBlendFunc(GL_DST_COLOR, GL_ZERO);
@@ -1437,28 +1437,28 @@ void CAnimationManager::Draw(CGameObject *obj, int x, int y, const bool &mirror,
 					if (color == SPECTRAL_COLOR_SPECIAL)
 					{
 						glBlendFunc(GL_ZERO, GL_ONE_MINUS_SRC_COLOR);
-						glUniform1iARB(g_ShaderDrawMode, SDM_SPECIAL_SPECTRAL);
+						glUniform1i(g_ShaderDrawMode, SDM_SPECIAL_SPECTRAL);
 					}
 					else
 					{
 						glBlendFunc(GL_ZERO, GL_SRC_COLOR);
-						glUniform1iARB(g_ShaderDrawMode, SDM_SPECTRAL);
+						glUniform1i(g_ShaderDrawMode, SDM_SPECTRAL);
 					}
 				}
 				else if (color)
 				{
 					if (partialHue)
-						glUniform1iARB(g_ShaderDrawMode, SDM_PARTIAL_HUE);
+						glUniform1i(g_ShaderDrawMode, SDM_PARTIAL_HUE);
 					else
-						glUniform1iARB(g_ShaderDrawMode, SDM_COLORED);
+						glUniform1i(g_ShaderDrawMode, SDM_COLORED);
 
 					g_ColorManager.SendColorsToShader(color);
 				}
 				else
-					glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+					glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 			}
 			else
-				glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+				glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 
 			if (m_Transform)
 			{
@@ -1677,7 +1677,7 @@ void CAnimationManager::DrawCharacter(CGameCharacter *obj, int x, int y)
 		uint auraColor = g_ColorManager.GetPolygoneColor(16, g_ConfigManager.GetColorByNotoriety(obj->Notoriety));
 		glColor4ub(GetRValue(auraColor), GetGValue(auraColor), GetBValue(auraColor), 0xFF);
 
-		glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+		glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 		g_AuraTexture.Draw(drawX - g_AuraTexture.Width / 2, drawY - g_AuraTexture.Height / 2);
 
 		glColor4f(1.0f, 1.0f, 1.0f, 1.0f);

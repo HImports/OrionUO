@@ -99,19 +99,13 @@ bool CGLEngine::Install()
 	if (!wglMakeCurrent(m_DC, m_RC))
 		return false;
 	
-	int glewInitResult = glewInit();
-	LOG("glewInit() = %i rt=%i fb=%i v(%s) (shader: %i)\n", glewInitResult, WGLEW_ARB_render_texture, GL_ARB_framebuffer_object, glGetString(GL_VERSION), GL_ARB_shader_objects);
+	int glewInitResult = ogl_LoadFunctions();
+	LOG("glewInit() = %i v(%s)\n", glewInitResult, glGetString(GL_VERSION));
 
 	if (!glewInitResult)
 	{
-		m_CanUseFrameBuffer = (GL_ARB_framebuffer_object &&
-			glBindFramebuffer &&
-			glDeleteFramebuffers &&
-			glFramebufferTexture2D &&
-			glGenFramebuffers
-			);
 
-		m_CanUseBuffer = (GL_VERSION_1_5 &&
+		m_CanUseBuffer = (GL_VERSION == 1.5 &&
 			glBindBuffer &&
 			glBufferData &&
 			glDeleteBuffers &&

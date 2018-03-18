@@ -399,7 +399,7 @@ void CMouseManager::Draw(ushort id)
 
 				g_ColorManager.SendColorsToShader(color);
 
-				glUniform1iARB(g_ShaderDrawMode, SDM_COLORED);
+				glUniform1i(g_ShaderDrawMode, SDM_COLORED);
 			}
 
 			th->Draw(x, y);
@@ -425,7 +425,7 @@ void CMouseManager::Draw(ushort id)
 
 					glColor4ub(GetRValue(auraColor), GetGValue(auraColor), GetBValue(auraColor), 0xFF);
 
-					glUniform1iARB(g_ShaderDrawMode, SDM_NO_COLOR);
+					glUniform1i(g_ShaderDrawMode, SDM_NO_COLOR);
 
 					CGLTexture tex;
 					tex.Texture = g_AuraTexture.Texture;

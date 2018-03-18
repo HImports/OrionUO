@@ -17,13 +17,13 @@ class CGLShader
 {
 protected:
 	//Шейдерная программа
-	GLhandleARB m_Shader{ 0 };
+	GLhandle m_Shader{ 0 };
 
 	//Вершинный шейдер
-	GLhandleARB m_VertexShader{ 0 };
+	GLhandle m_VertexShader{ 0 };
 
 	//Фрагментный (пиксельный) шейдер
-	GLhandleARB m_FragmentShader{ 0 };
+	GLhandle m_FragmentShader{ 0 };
 
 	//Указатель на текстуру для передачи ее шейдеру (можно не использовать, текстура передается автоматически при glBingTexture)
 	GLuint m_TexturePointer{ 0 };
